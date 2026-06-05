@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Python virtual environment
+.venv/
+
+# Raw data (large files, not for sharing)
+Data/
+
+# R workspace/history
+.RData
+.Rhistory

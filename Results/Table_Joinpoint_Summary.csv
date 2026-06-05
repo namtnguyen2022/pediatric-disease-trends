@@ -1,0 +1,45 @@
+disease,measure,n_joinpoints,period,APC,direction
+Enteric infections,Incidence,3,1990-1995,-24.14,Decreasing
+Enteric infections,Incidence,3,1995-2002,5.77,Increasing
+Enteric infections,Incidence,3,2002-2015,-21.49,Decreasing
+Enteric infections,Incidence,3,2015-2023,20.71,Increasing
+Enteric infections,Deaths,3,1990-1999,2.34,Increasing
+Enteric infections,Deaths,3,1999-2004,10.73,Increasing
+Enteric infections,Deaths,3,2004-2011,0.31,Increasing
+Enteric infections,Deaths,3,2011-2023,-4.61,Decreasing
+Enteric infections,DALYs (Disability-Adjusted Life Years),3,1990-1993,-9.59,Decreasing
+Enteric infections,DALYs (Disability-Adjusted Life Years),3,1993-2002,1.14,Increasing
+Enteric infections,DALYs (Disability-Adjusted Life Years),3,2002-2020,-4.5,Decreasing
+Enteric infections,DALYs (Disability-Adjusted Life Years),3,2020-2023,3.9,Increasing
+Lower respiratory infections,Incidence,3,1990-1995,1.82,Increasing
+Lower respiratory infections,Incidence,3,1995-2002,-2.72,Decreasing
+Lower respiratory infections,Incidence,3,2002-2011,0.23,Increasing
+Lower respiratory infections,Incidence,3,2011-2023,-3.39,Decreasing
+Lower respiratory infections,Deaths,2,1990-1998,-0.93,Decreasing
+Lower respiratory infections,Deaths,2,1998-1999,-15.94,Decreasing
+Lower respiratory infections,Deaths,2,1999-2023,-1.94,Decreasing
+Lower respiratory infections,DALYs (Disability-Adjusted Life Years),3,1990-1998,-2.56,Decreasing
+Lower respiratory infections,DALYs (Disability-Adjusted Life Years),3,1998-1999,-10.49,Decreasing
+Lower respiratory infections,DALYs (Disability-Adjusted Life Years),3,1999-2021,-1.91,Decreasing
+Lower respiratory infections,DALYs (Disability-Adjusted Life Years),3,2021-2023,5.21,Increasing
+Upper respiratory infections,Incidence,3,1990-2001,0.23,Increasing
+Upper respiratory infections,Incidence,3,2001-2014,-1.39,Decreasing
+Upper respiratory infections,Incidence,3,2014-2021,0.28,Increasing
+Upper respiratory infections,Incidence,3,2021-2023,4.89,Increasing
+Upper respiratory infections,Deaths,3,1990-2000,-9.5,Decreasing
+Upper respiratory infections,Deaths,3,2000-2015,-0.76,Decreasing
+Upper respiratory infections,Deaths,3,2015-2019,-3.63,Decreasing
+Upper respiratory infections,Deaths,3,2019-2023,2.48,Increasing
+Upper respiratory infections,DALYs (Disability-Adjusted Life Years),3,1990-2002,-0.08,Decreasing
+Upper respiratory infections,DALYs (Disability-Adjusted Life Years),3,2002-2014,-1.33,Decreasing
+Upper respiratory infections,DALYs (Disability-Adjusted Life Years),3,2014-2021,0.22,Increasing
+Upper respiratory infections,DALYs (Disability-Adjusted Life Years),3,2021-2023,4.63,Increasing
+Neglected tropical diseases and malaria,Incidence,0,1990-2023,3.25,Increasing
+Neglected tropical diseases and malaria,Deaths,3,1990-1999,-2.26,Decreasing
+Neglected tropical diseases and malaria,Deaths,3,1999-2003,13.22,Increasing
+Neglected tropical diseases and malaria,Deaths,3,2003-2009,-1.29,Decreasing
+Neglected tropical diseases and malaria,Deaths,3,2009-2023,1.69,Increasing
+Neglected tropical diseases and malaria,DALYs (Disability-Adjusted Life Years),3,1990-1996,-1.24,Decreasing
+Neglected tropical diseases and malaria,DALYs (Disability-Adjusted Life Years),3,1996-2004,1.13,Increasing
+Neglected tropical diseases and malaria,DALYs (Disability-Adjusted Life Years),3,2004-2009,-0.98,Decreasing
+Neglected tropical diseases and malaria,DALYs (Disability-Adjusted Life Years),3,2009-2023,0.04,Increasing

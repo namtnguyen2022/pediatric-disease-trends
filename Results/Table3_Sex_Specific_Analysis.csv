@@ -1,0 +1,37 @@
+cause_name,measure_name,sex_name,Y1990,Y2023,percent_change
+Enteric infections,DALYs (Disability-Adjusted Life Years),Both,69.64637992473546,20.724249766948788,-70.24360808222222
+Enteric infections,DALYs (Disability-Adjusted Life Years),Female,64.20629949523827,19.72891019161625,-69.27262535496318
+Enteric infections,DALYs (Disability-Adjusted Life Years),Male,74.8340182964848,21.676417982317297,-71.03400502103531
+Lower respiratory infections,DALYs (Disability-Adjusted Life Years),Both,232.00725767025517,102.87619208128564,-55.65820090529219
+Lower respiratory infections,DALYs (Disability-Adjusted Life Years),Female,208.02031440735863,86.42222974817628,-58.45490860140766
+Lower respiratory infections,DALYs (Disability-Adjusted Life Years),Male,254.88110532814062,118.61531251690954,-53.46249288890949
+Neglected tropical diseases and malaria,DALYs (Disability-Adjusted Life Years),Both,14.2889630409801,14.368868709353597,0.5592125064942169
+Neglected tropical diseases and malaria,DALYs (Disability-Adjusted Life Years),Female,15.103387271429218,14.128571490386511,-6.454285807043744
+Neglected tropical diseases and malaria,DALYs (Disability-Adjusted Life Years),Male,13.515894503052918,14.601498257102746,8.032052586712746
+Upper respiratory infections,DALYs (Disability-Adjusted Life Years),Both,171.66032250709944,164.54637645759837,-4.144199396576837
+Upper respiratory infections,DALYs (Disability-Adjusted Life Years),Female,171.9166438680664,164.28453283538937,-4.439425329018237
+Upper respiratory infections,DALYs (Disability-Adjusted Life Years),Male,171.41949544931398,164.7992564336202,-3.862010559733145
+Enteric infections,Deaths,Both,0.4068270997784383,0.1974380576996543,-51.46880387093661
+Enteric infections,Deaths,Female,0.35438422209084897,0.18606140173504915,-47.49726705176198
+Enteric infections,Deaths,Male,0.4568380389465384,0.20832113415855089,-54.399345851554685
+Lower respiratory infections,Deaths,Both,2.6264895474317114,1.1719260306273482,-55.380518008407634
+Lower respiratory infections,Deaths,Female,2.35820419750709,0.9860884317305012,-58.18477327905204
+Lower respiratory infections,Deaths,Male,2.8823233574351397,1.349683673300183,-53.17375929322481
+Neglected tropical diseases and malaria,Deaths,Both,0.036289187310640805,0.04953414909424991,36.49836980428985
+Neglected tropical diseases and malaria,Deaths,Female,0.03330903919148408,0.04698519903685864,41.058403896774855
+Neglected tropical diseases and malaria,Deaths,Male,0.03912914684491206,0.051969674821036954,32.81576270246367
+Upper respiratory infections,Deaths,Both,0.10170608165884865,0.030507072697943935,-70.0046720900394
+Upper respiratory infections,Deaths,Female,0.0909980893319434,0.021815757589722016,-76.02613664761427
+Upper respiratory infections,Deaths,Male,0.1119171259035516,0.03882041868910663,-65.31324551475576
+Enteric infections,Incidence,Both,17451.56518338873,1588.4846444799202,-90.89775256381061
+Enteric infections,Incidence,Female,17030.505932540265,1589.0300873237966,-90.66950744964288
+Enteric infections,Incidence,Male,17853.039902912067,1587.9588909162699,-91.10538653612008
+Lower respiratory infections,Incidence,Both,693.83055900493,478.0676432285333,-31.097349774538195
+Lower respiratory infections,Incidence,Female,652.9800959583799,443.48029126751334,-32.08364328217132
+Lower respiratory infections,Incidence,Male,732.78686661062,511.1485513122733,-30.245945362462173
+Neglected tropical diseases and malaria,Incidence,Both,0.06960155080333333,0.14042969635666666,101.76230951155942
+Neglected tropical diseases and malaria,Incidence,Female,0.054029798153333336,0.13773102989,154.9167951713008
+Neglected tropical diseases and malaria,Incidence,Male,0.08441918035333333,0.14299731018333334,69.38959793831619
+Upper respiratory infections,Incidence,Both,456039.01930519,453038.6264388568,-0.6579245940192827
+Upper respiratory infections,Incidence,Female,460099.4600538148,454767.18308220577,-1.1589400628693107
+Upper respiratory infections,Incidence,Male,452178.5820943349,451393.66026272235,-0.17358668957230278
