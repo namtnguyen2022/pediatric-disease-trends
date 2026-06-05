@@ -1,4 +1,4 @@
-# Pediatric Infectious Disease Trends — United States (1990–2023)
+# Pediatric Infectious Disease Trends: United States (1990–2023)
 
 Analysis of infectious disease burden among U.S. children aged 0–14 years using Global Burden of Disease (GBD) 2023 data.
 
@@ -44,9 +44,3 @@ install.packages(c("tidyverse", "ggplot2", "segmented", "gridExtra",
                    "cowplot", "ggpubr", "flextable", "officer", "scales"))
 ```
 
-## Key Findings
-
-- Overall decline in pediatric infectious disease burden from 1990–2023
-- Enteric infection incidence reversed after 2015 (APC: +20.71%/year)
-- LRI mortality showed a sharp decline around 1998–1999, coinciding with PCV7 introduction
-- Children under 5 carry disproportionately higher burden across all measures
