@@ -137,88 +137,60 @@ create_trend_plot <- function(data, measure, metric, title_suffix) {
   return(p)
 }
 
-# Create all plots
-# Deaths
-deaths_number <- create_trend_plot(filtered_data, "Deaths", "Number", "A")
-deaths_rate <- create_trend_plot(filtered_data, "Deaths", "Rate", "B")
+# Create 3 rate-only panels (A = Incidence, B = Mortality, C = DALYs)
 
-# DALYs
-dalys_number <- create_trend_plot(filtered_data, "DALYs (Disability-Adjusted Life Years)", "Number", "C")
-dalys_rate <- create_trend_plot(filtered_data, "DALYs (Disability-Adjusted Life Years)", "Rate", "D")
-
-# Incidence (with log scale for better visualization)
-incidence_number <- create_trend_plot(filtered_data, "Incidence", "Number", "A") +
-  scale_y_log10(labels = label_number(scale_cut = cut_short_scale())) +
-  labs(y = "Incidence (log10 scale)")
-
-incidence_rate <- create_trend_plot(filtered_data, "Incidence", "Rate", "B") +
+# Panel A: ASIR on log10 scale (URI ~456,000 vs NTD ~0.14 — log scale required)
+plot_a <- create_trend_plot(filtered_data, "Incidence", "Rate", "A") +
   scale_y_log10(labels = label_number()) +
-  labs(y = "ASIR (log10 scale)")
+  labs(y = "ASIR per 100,000 (log₁₀ scale)") +
+  guides(color = guide_legend(ncol = 3))
 
-# FIGURE 1: Deaths and DALYs (2 columns x 2 rows)
-deaths_dalys_plot <- grid.arrange(
-  deaths_number, deaths_rate,
-  dalys_number, dalys_rate,
-  ncol = 2,
-  top = "Deaths and DALYs Trends in United States (1990-2023)"
+# Panel B: ASMR on linear scale
+plot_b <- create_trend_plot(filtered_data, "Deaths", "Rate", "B") +
+  labs(y = "ASMR per 100,000") +
+  guides(color = guide_legend(ncol = 3))
+
+# Panel C: ASDR on linear scale
+plot_c <- create_trend_plot(
+  filtered_data, "DALYs (Disability-Adjusted Life Years)", "Rate", "C"
+) +
+  labs(y = "ASDR per 100,000") +
+  guides(color = guide_legend(ncol = 3))
+
+# Combined 3-panel figure
+combined_figure <- grid.arrange(
+  plot_a, plot_b, plot_c,
+  ncol = 3,
+  top = "Age-Standardized Infectious Disease Rates, U.S. Children 0-14 Years (1990-2023)"
 )
 
-# Save Figure 1
-ggsave("Results/figure1_deaths_dalys.png", 
-       deaths_dalys_plot, 
-       width = 12, 
-       height = 10, 
+ggsave("Results/Figure1_Publication_Ready.png",
+       combined_figure,
+       width = 18,
+       height = 6,
        dpi = 300)
 
-# FIGURE 2: Incidence with log scale (2 columns x 1 row)
-incidence_plot <- grid.arrange(
-  incidence_number, incidence_rate,
-  ncol = 2,
-  top = "Incidence Trends in United States (1990-2023) - Log Scale"
-)
-
-# Save Figure 2
-ggsave("Results/figure2_incidence_log.png", 
-       incidence_plot, 
-       width = 12, 
-       height = 5, 
-       dpi = 300)
-
-# Create summary statistics table
+# Summary statistics (rates only)
 summary_stats <- filtered_data %>%
   filter(cause_name %in% causes,
          metric_name == "Rate") %>%
   group_by(measure_name, cause_name) %>%
   summarise(
-    mean_rate = mean(val, na.rm = TRUE),
-    min_year = year[which.min(val)],
-    min_rate = min(val, na.rm = TRUE),
-    max_year = year[which.max(val)],
-    max_rate = max(val, na.rm = TRUE),
-    percent_change = ((val[year == max(year)] - val[year == min(year)]) / 
-                       val[year == min(year)]) * 100,
+    mean_rate     = mean(val, na.rm = TRUE),
+    min_year      = year[which.min(val)],
+    min_rate      = min(val, na.rm = TRUE),
+    max_year      = year[which.max(val)],
+    max_rate      = max(val, na.rm = TRUE),
+    percent_change = ((val[year == max(year)] - val[year == min(year)]) /
+                        val[year == min(year)]) * 100,
     .groups = "drop"
   )
 
-# Save summary statistics
 write_csv(summary_stats, "Results/summary_statistics.csv")
 
-# Print summary
 cat("\n=== Analysis Complete ===\n")
-cat("Plots saved in Results/ directory:\n")
-cat("  - figure1_deaths_dalys.png (Deaths and DALYs - 4 panels)\n")
-cat("  - figure2_incidence_log.png (Incidence with log scale - 2 panels)\n")
-cat("  - summary_statistics.csv\n\n")
-
-cat("Diseases analyzed:\n")
-for (cause in causes) {
-  cat(paste0("  - ", cause, "\n"))
-}
-
-cat("\nMeasures analyzed:\n")
-cat("  - Deaths (Number and Rate)\n")
-cat("  - Incidence (Number and Rate)\n")
-cat("  - DALYs (Number and Rate)\n")
+cat("Saved: Results/Figure1_Publication_Ready.png (3 panels: ASIR, ASMR, ASDR)\n")
+cat("Saved: Results/summary_statistics.csv\n")
 cat("\nTime period: 1990-2023\n")
 cat("Location: United States of America\n")
-cat("Population: Both sexes, Age-standardized\n")
+cat("Population: Both sexes, age-standardized rates\n")
