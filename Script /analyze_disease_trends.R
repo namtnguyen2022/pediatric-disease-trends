@@ -10,6 +10,7 @@ library(tidyr)
 library(readr)
 library(gridExtra)
 library(scales)
+library(cowplot)
 
 # Set working directory and load data
 setwd("/Users/nam.tnguyen2022/Documents/KIDS_DISEASES ")
@@ -138,37 +139,51 @@ create_trend_plot <- function(data, measure, metric, title_suffix) {
 }
 
 # Create 3 rate-only panels (A = Incidence, B = Mortality, C = DALYs)
+# Legends are placed at bottom for extraction; removed from individual panels
 
 # Panel A: ASIR on log10 scale (URI ~456,000 vs NTD ~0.14 — log scale required)
 plot_a <- create_trend_plot(filtered_data, "Incidence", "Rate", "A") +
   scale_y_log10(labels = label_number()) +
   labs(y = "ASIR per 100,000 (log10 scale)") +
-  guides(color = guide_legend(ncol = 3))
+  guides(color = guide_legend(ncol = 3)) +
+  theme(legend.position = "bottom",
+        legend.text = element_text(size = 8),
+        legend.key.size = unit(0.4, "cm"))
 
 # Panel B: ASMR on linear scale
 plot_b <- create_trend_plot(filtered_data, "Deaths", "Rate", "B") +
   labs(y = "ASMR per 100,000") +
-  guides(color = guide_legend(ncol = 3))
+  theme(legend.position = "none")
 
 # Panel C: ASDR on linear scale
 plot_c <- create_trend_plot(
   filtered_data, "DALYs (Disability-Adjusted Life Years)", "Rate", "C"
 ) +
   labs(y = "ASDR per 100,000") +
-  guides(color = guide_legend(ncol = 3))
+  theme(legend.position = "none")
 
-# Combined 3-panel figure
-combined_figure <- grid.arrange(
-  plot_a, plot_b, plot_c,
-  ncol = 3,
-  top = "Age-Standardized Infectious Disease Rates, U.S. Children 0-14 Years (1990-2023)"
+# Extract shared legend from panel A, then strip it
+shared_legend <- get_legend(plot_a)
+plot_a_clean  <- plot_a + theme(legend.position = "none")
+
+# Compose: 3 panels on top, shared legend on bottom
+figure_body <- plot_grid(
+  plot_a_clean, plot_b, plot_c,
+  ncol = 3, align = "hv"
+)
+
+final_fig <- plot_grid(
+  figure_body,
+  shared_legend,
+  ncol        = 1,
+  rel_heights = c(1, 0.18)
 )
 
 ggsave("Results/Figure1_Publication_Ready.png",
-       combined_figure,
-       width = 18,
-       height = 6,
-       dpi = 300)
+       final_fig,
+       width  = 18,
+       height = 7,
+       dpi    = 300)
 
 # Summary statistics (rates only)
 summary_stats <- filtered_data %>%
