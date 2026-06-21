@@ -142,7 +142,7 @@ create_trend_plot <- function(data, measure, metric, title_suffix) {
 # Panel A: ASIR on log10 scale (URI ~456,000 vs NTD ~0.14 — log scale required)
 plot_a <- create_trend_plot(filtered_data, "Incidence", "Rate", "A") +
   scale_y_log10(labels = label_number()) +
-  labs(y = "ASIR per 100,000 (log₁₀ scale)") +
+  labs(y = "ASIR per 100,000 (log10 scale)") +
   guides(color = guide_legend(ncol = 3))
 
 # Panel B: ASMR on linear scale
